@@ -23,8 +23,13 @@ class _ProfileState extends State<Profile> {
             Icon(Icons.search_outlined),
             Icon(Icons.more_vert)
           ],
-          title: Text("Profile Page",style: TextStyle(color: Colors.black),),
-          leading: CircleAvatar(child: Icon(Icons.person_outline)),
+          title:Row(
+            children: [
+           CircleAvatar(child: Icon(Icons.person_outline)),
+           SizedBox(width: 16,),
+               Text("Profile Page",style: TextStyle(color: Colors.black),),
+            ],
+          )
 
         ),
         body: Column(

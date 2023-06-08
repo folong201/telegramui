@@ -47,11 +47,11 @@ class _MyHomePageState extends State<MyHomePage> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.amber),
-        backgroundColor: Colors.white,
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Color.fromARGB(190, 0, 136, 204),
         title: const Text(
           "Telegram",
-          style: TextStyle(color: Colors.black),
+          style: TextStyle(color: Colors.white),
         ),
         actions: [Icon(Icons.search)],
       ),
@@ -64,9 +64,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 Navigator.of(context).pushNamed("/chat");
               },
               leading: CircleAvatar(
-                child: Icon(Icons.person),
-                radius: 15,
-              ),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(50),
+                      child: Image(
+                          image: NetworkImage(
+                              "https://th.bing.com/th?id=OIP.2i5UaEHaQM3PYAYXQyM1AAAAAA&w=249&h=249&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2")))),
               title: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -100,17 +102,14 @@ class _MyHomePageState extends State<MyHomePage> {
       drawer: Drawer(
         child: ListView(
           children: [
-            // DrawerHeader(
-            //   decoration: BoxDecoration(color: Colors.blue),
-            //   child: Text("FOLONG201"),
-            // ),
             GestureDetector(
               onTap: () {
                 Navigator.of(context).pushNamed("/profile");
               },
               child: UserAccountsDrawerHeader(
+                  arrowColor: Color.fromARGB(190, 0, 136, 204),
                   currentAccountPicture: CircleAvatar(
-                    backgroundColor: Colors.greenAccent,
+                    backgroundColor: Colors.black12,
                     child: Icon(
                       Icons.person,
                       color: Colors.white,

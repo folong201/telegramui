@@ -15,17 +15,37 @@ class _ChatState extends State<Chat> {
     return SafeArea(
         child: Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.amberAccent,
-        iconTheme: IconThemeData(color: Colors.black),
-        actions: [Icon(Icons.more_vert)],
-        leading: CircleAvatar(
-          child: Icon(Icons.person_outline),
-        ),
-        title: Text(
-          "User",
-          style: TextStyle(color: Colors.white),
-        ),
-      ),
+          backgroundColor: Color.fromARGB(190, 0, 136, 204),
+          iconTheme: IconThemeData(color: Colors.white),
+          actions: [Icon(Icons.more_vert)],
+
+          // leading: CircleAvatar(
+          //   child: Icon(Icons.person_outline),
+          // ),
+          title:  Row(
+            children: [
+              CircleAvatar(
+                radius: 15,
+                backgroundColor: Color.fromARGB(190, 0, 136, 204),
+                
+                child: ClipRRect(
+                    borderRadius: BorderRadius.circular(50),
+                    child: Image(
+                          image: NetworkImage(
+                              "https://th.bing.com/th?id=OIP.2i5UaEHaQM3PYAYXQyM1AAAAAA&w=249&h=249&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2"))
+             
+                  )
+                
+              ),
+              SizedBox(
+                width: 10,
+              ),
+              Text(
+                "User",
+                style: TextStyle(color: Colors.white),
+              ),
+            ],
+          )),
       body: Column(
         children: [
           Expanded(
@@ -66,9 +86,10 @@ Widget ChatBubble(BuildContext context, int index) {
     return Padding(
       padding: EdgeInsets.only(right: 102.0),
       child: Container(
-        // decoration: BoxDecoration(
-        //     color: Colors.green, borderRadius: BorderRadius.circular(10)),
+        decoration: BoxDecoration(
+            color: Colors.blue, borderRadius: BorderRadius.circular(10)),
         child: Row(
+          
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Flexible(
@@ -89,8 +110,8 @@ Widget ChatBubble(BuildContext context, int index) {
     return Padding(
       padding: EdgeInsets.only(left: 102.0),
       child: Container(
-        // decoration: BoxDecoration(
-        //     color: Colors.blue, borderRadius: BorderRadius.circular(10)),
+        decoration: BoxDecoration(
+            color: Color.fromARGB(197, 77, 240, 83), borderRadius: BorderRadius.circular(10)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -109,4 +130,4 @@ Widget ChatBubble(BuildContext context, int index) {
       ),
     );
   }
-}
+} 
